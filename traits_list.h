@@ -8,7 +8,7 @@ class TraitsList {
     public:
         typedef typename Tr::T T;
         typedef typename Tr::Operation Operation;
-      
+
     private:
         Node<T>* head;
         Operation cmp;

@@ -15,15 +15,30 @@ class SelfList {
         Method method;
 
     public:
-        SelfList(Method method) : head(nullptr) {};
+        SelfList(Method method) : head(nullptr), method(method) {};
 
-        bool insert(T data) {
-            // TODO
+        void insert(T data) {
+            Node<T>* temporal = new Node(data);
+            if (this->head == nullptr) {
+                this->head = temporal;
+            } else {
+                temporal->next = this->head;
+                this->head = temporal;
+            }
         }
              
-        bool remove(T data) {
-            // TODO
-        }  
+        void remove(T data) {
+            Node<T>* actual = this->head;
+            Node<T>* previo = actual;
+            do {
+                if (actual->data == data) {
+                    previo->next = actual->next;
+                    //delete actual;
+                }
+                previo = actual;
+                actual = actual->next;
+            } while (actual != nullptr);
+        }
 
         bool find(T data) {
             // TODO
@@ -38,7 +53,12 @@ class SelfList {
         }
 
         void print() {
-            // TODO
+            Node<T>* actual = this->head;
+            do {
+                cout << actual->data << ' ';
+                actual = actual->next;
+            } while (actual != nullptr);
+            cout << endl;
         }
 
         ~SelfList() {
