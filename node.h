@@ -4,6 +4,7 @@
 template <typename T>
 struct Node {
     T data;
+    int cuenta = 0;
     Node<T>* next;
 
     Node(T data) : data(data) {
