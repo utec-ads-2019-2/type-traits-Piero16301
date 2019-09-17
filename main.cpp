@@ -5,7 +5,7 @@
 using namespace std;
 
 int main(int argc, char const *argv[]) {
-    //Tester::execute();
+    Tester::execute();
 
     // --------- Test Move ---------
     /*SelfList<int> list(SelfList<int>::Move);
@@ -51,6 +51,20 @@ int main(int argc, char const *argv[]) {
     list.find(2);
     list.find(2);
     list.print();*/
+
+    // --------- Test Traits ---------
+
+    /*TraitsList<Integer> traitsList;
+    traitsList.insert(5);
+    traitsList.insert(4);
+    traitsList.insert(3);
+    traitsList.insert(2);
+    traitsList.print();
+    cout << traitsList[2] << endl;
+    cout << traitsList.size() << endl;
+    traitsList.remove(4);
+    traitsList.print();
+    cout << traitsList.size() << endl;*/
 
     return EXIT_SUCCESS;
 }
