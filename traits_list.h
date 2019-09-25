@@ -34,6 +34,7 @@ class TraitsList {
         bool insert(T data) {
             Node<T>** puntero = nullptr;
             if (!find(data, puntero)) {
+                // No estás colocando el template? Esto no va a compilar
                 Node<T>* temporal = new Node(data);
                 temporal->next = *puntero;
                 *puntero = temporal;

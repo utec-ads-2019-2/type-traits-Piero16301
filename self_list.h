@@ -94,6 +94,7 @@ class SelfList {
 
         void insert(T data) {
             if (this->head == nullptr) {
+                // No has puesto el template aquí, esto no va a compilar
                 Node<T>* temporal = new Node(data);
                 this->head = temporal;
                 this->nodes++;
@@ -106,6 +107,7 @@ class SelfList {
                     }
                     actual = actual->next;
                 }
+                // No has puesto el temporal aquí, esto no va a compilar
                 Node<T>* temporal = new Node(data);
                 temporal->next = this->head;
                 this->head = temporal;
